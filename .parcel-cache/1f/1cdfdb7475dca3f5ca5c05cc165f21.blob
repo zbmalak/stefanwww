@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fc10d178901c2f50efac58e997524c93">
+    <link rel="preconnect" href="c5b17644e9b6ae13bb384d72781855da">
+    <link href="7128359a0c49fd3d86a5c9df6c8a9abc" rel="stylesheet">
+    <title>Stefan Łazarski</title>
+  </head>
+  <body>
+    <div class="overlay hidden"></div>
+    <header>
+      <div class="top">
+        <h1>Stefan Łazarski</h1>
+        <h2>director/screenwriter</h2>
+      </div>
+      <div class="contact">
+        <p class="mail">contact@stefansmovies.com</p>
+        <p class="phone">+48 123 123 123</p>
+      </div>
+    </header>
+    <nav>
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link" href="#section--fiction">fiction</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--documentary">documentary</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--commercial">commercial</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--personal">personal</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--musicvideo">music video</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="section--fiction">
+      <p class="section__title">fiction</p>
+      <div class="movies">
+        <img class="movie" id="dMdJUfna1SI" src="83f510956c59c07eab827015eca08779" alt="video mini">
+        <img class="movie" id="QiqH5ym7ZuM" src="372db1c1a121b7edd55cd8be0e7b3360" alt="video mini">
+        <img class="movie" id="h_Z0z5aBh7g" src="fd9f4fae447ca3496000e61c20754e14" alt="video mini">
+        <img class="movie" id="spN17NY6VlU" src="86f4466fa595cdc29bc743eb5e3c1d7b" alt="video mini">
+      </div>
+    </section>
+    <section id="section--documentary">
+      <p class="section__title">documentary</p>
+      <div class="movies">
+        <img class="movie" id="cJSCh2U_uNY" src="0be5aa6e252f782708be295b7fd665f3" alt="video mini">
+        <img class="movie" id="Tsm_PdFATfE" src="477ef4be9573575eff28e99418fccf28" alt="video mini">
+      </div>
+    </section>
+    <section id="section--commercial">
+      <p class="section__title">commercial</p>
+      <div class="movies">
+        <img class="movie" id="4e7cQ281NQw" src="babccd3407bc0376b1a5626b5292ec10" alt="video mini">
+        <img class="movie" id="_HvKe_e1JOQ" src="378692778fabcbf5d45ed6201f7a422e" alt="video mini">
+        <img class="movie" id="ZKfb3-NFAdk" src="3a2fe7d4c89304416f525ad96b315e0d" alt="video mini">
+      </div>
+    </section>
+    <section id="section--personal">
+      <p class="section__title">personal</p>
+      <div class="movies">
+        <img class="movie" id="V1_7aIxYXJ8" src="63a7920c3e261280f45176791e770e2f" alt="video mini">
+        <img class="movie" id="6UAi8fgAZtY" src="d89674979e7b6442894ceaa6fde44bfd" alt="video mini">
+        <img class="movie" id="rvBULEFohNs" src="7b2d144fbb6d0700524a7537ddf3cb54" alt="video mini">
+        <img class="movie" id="aM7SxNE13TI" src="71e3deb2b43467870e72b6d2ee1212ea" alt="video mini">
+        <img class="movie" id="Dkjq4QsJuAg" src="850a96eff8b7736d29048afaed8d6cf0" alt="video mini">
+        <img class="movie" id="WLDDAHMTIUg" src="d8614a78f778146dc50e117f15659566" alt="video mini">
+        <img class="movie" id="MgU4UrTDkRc" src="2e2fa439d9d3329798b7cbb87674c516" alt="video mini">
+      </div>
+    </section>
+
+    <section id="section--musicvideo">
+      <p class="section__title">music video</p>
+      <div class="movies">
+        <img class="movie" id="zgw84vYqDx4" src="59ec1b03bb79a6e7088c37764b216d4c" alt="video mini">
+        <img class="movie" id="7BKIfWBqjrs" src="4aab09abe8531a4d8e216855ce85eda8" alt="video mini">
+      </div>
+      <div class="modal hidden">
+        <button class="close--modal">&times;</button>
+        <div class="iframe">
+          <iframe src="fea652907e45bb87778c6f819b65cd3a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer><p>&copy; Stefan Łazarski 2021</p></footer>
+    <script src="b99a878c08d8235b1c87df06de3a4e46"></script>
+  </body>
+</html>
