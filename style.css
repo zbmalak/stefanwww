@@ -102,7 +102,7 @@ img.movie {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   width: 95%;
   height: 95%;
 
@@ -111,6 +111,7 @@ img.movie {
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 2;
+  animation: open 0.5gs forwards;
 }
 
 .modal button.close--modal {
@@ -150,6 +151,12 @@ footer {
   text-align: center;
   line-height: 4vh;
   background-color: #b2b1b1;
+}
+
+@keyframes open {
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 @media (min-width: 1024px) {
