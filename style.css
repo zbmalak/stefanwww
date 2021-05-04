@@ -99,7 +99,7 @@ img.movie {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  width: 85%;
+  width: 95%;
   height: 75%;
 
   background-color: white;
@@ -109,10 +109,10 @@ img.movie {
   animation: open 0.3s forwards;
 }
 
-.modal button.close--modal {
+.modal .close--modal {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   width: 20px;
 }
 
@@ -125,7 +125,7 @@ img.movie {
 
 .iframe iframe {
   width: 300px;
-  height: 450px;
+  height: 300px;
 }
 
 .overlay {
@@ -173,8 +173,8 @@ footer {
   }
 
   .iframe iframe {
-    width: 600px;
-    max-height: 600px;
+    width: 500px;
+    height: 200px;
   }
 }
 
@@ -199,6 +199,6 @@ footer {
 
   .iframe iframe {
     width: 1000px;
-    max-height: 600px;
+    height: 450px;
   }
 }
