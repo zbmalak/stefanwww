@@ -4,24 +4,11 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close--modal");
 const modalContainer = document.querySelector(".modal--container");
 
-const fictionMovies = [
-  "dMdJUfna1SI",
-  "QiqH5ym7ZuM",
-  "h_Z0z5aBh7g",
-  "spN17NY6VlU",
-];
-const documentaryMovies = ["cJSCh2U_uNY", "Tsm_PdFATfE"];
-const commercialMovies = ["4e7cQ281NQw", "_HvKe_e1JOQ", "ZKfb3-NFAdk"];
-const personalMovies = [
-  "V1_7aIxYXJ8",
-  "6UAi8fgAZtY",
-  "rvBULEFohNs",
-  "aM7SxNE13TI",
-  "Dkjq4QsJuAg",
-  "WLDDAHMTIUg",
-  "MgU4UrTDkRc",
-];
-const musicvideoMovies = ["zgw84vYqDx4", "7BKIfWBqjrs"];
+const fictionContainer = document.querySelector(".movies--fiction");
+const documentaryContainer = document.querySelector(".movies--documentary");
+const commercialContainer = document.querySelector(".movies--commercial");
+const personalContainer = document.querySelector(".movies--personal");
+const musicvideoContainer = document.querySelector(".movies--musicvideo");
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   if (e.target.classList.contains("nav__link")) {
@@ -31,125 +18,64 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
   }
 });
 
-// const openModal = function () {
-//   modal.classList.remove("hidden");
-//   overlay.classList.remove("hidden");
-// };
+const moviesObj = {
+  fictionMovies: ["dMdJUfna1SI", "QiqH5ym7ZuM", "h_Z0z5aBh7g", "spN17NY6VlU"],
+  documentaryMovies: ["cJSCh2U_uNY", "Tsm_PdFATfE"],
+  commercialMovies: ["4e7cQ281NQw", "_HvKe_e1JOQ", "ZKfb3-NFAdk"],
+  personalMovies: [
+    "V1_7aIxYXJ8",
+    "6UAi8fgAZtY",
+    "rvBULEFohNs",
+    "aM7SxNE13TI",
+    "Dkjq4QsJuAg",
+    "WLDDAHMTIUg",
+    "MgU4UrTDkRc",
+  ],
+  musicvideoMovies: ["zgw84vYqDx4", "7BKIfWBqjrs"],
 
-// const movie = document.querySelectorAll(".movie");
-// for (let i = 0; i < movie.length; i++) {
-//   movie[i].addEventListener("click", openModal);
+  renderMovies(arr, container) {
+    arr.forEach((movieID) => {
+      const markup = `
+        <img
+        class="movie ${movieID}"  id=${movieID}
+        src="https://i3.ytimg.com/vi/${movieID}/hqdefault.jpg"
+      
+      />
+     `;
+      container.insertAdjacentHTML("afterbegin", markup);
 
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+      const modalHtml = `
+      <div class="modal">
+        <button class="close--modal">&times;</button>
+        <div class="iframe">
+          <iframe
+            class="iframe__video"
+            src="https://www.youtube.com/embed/${movieID}"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>`;
+
+      document
+        .getElementById(`${movieID}`)
+        .addEventListener("click", function () {
+          modalContainer.insertAdjacentHTML("afterbegin", modalHtml);
+        });
+    });
+  },
 };
 
-// const displayFiction = function () {
-fictionMovies.forEach(function (item) {
-  const markup = `
-    <img
-    class="movie"
-    
-    src="https://i3.ytimg.com/vi/${item}/hqdefault.jpg"
-    alt="video mini"
-  />
-  `;
+moviesObj.renderMovies(moviesObj.fictionMovies, fictionContainer);
+moviesObj.renderMovies(moviesObj.documentaryMovies, documentaryContainer);
+moviesObj.renderMovies(moviesObj.commercialMovies, commercialContainer);
+moviesObj.renderMovies(moviesObj.personalMovies, personalContainer);
+moviesObj.renderMovies(moviesObj.musicvideoMovies, musicvideoContainer);
 
-  document
-    .querySelector(".movies--fiction")
-    .insertAdjacentHTML("afterbegin", markup);
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.classList == "close--modal") {
+    modalContainer.innerHTML = "";
+  }
 });
-// };
-
-// const displayDocumentary = function () {
-documentaryMovies.forEach(function (item) {
-  const markup = `
-    <img
-    class="movie"
-    
-    src="https://i3.ytimg.com/vi/${item}/hqdefault.jpg"
-    alt="video mini"
-  />
-  `;
-
-  document
-    .querySelector(".movies--documentary")
-    .insertAdjacentHTML("afterbegin", markup);
-});
-// };
-
-// const displayCommercial = function () {
-commercialMovies.forEach(function (item) {
-  const markup = `
-    <img
-    class="movie"
-    
-    src="https://i3.ytimg.com/vi/${item}/hqdefault.jpg"
-    alt="video mini"
-  />
-  `;
-
-  document
-    .querySelector(".movies--commercial")
-    .insertAdjacentHTML("afterbegin", markup);
-});
-// };
-// const displayPersonal = function () {
-personalMovies.forEach(function (item) {
-  const markup = `
-    <img
-    class="movie" id=${item}
-    
-    src="https://i3.ytimg.com/vi/${item}/hqdefault.jpg"
-    alt="video mini"
-  />
-  `;
-
-  document
-    .querySelector(".movies--personal")
-    .insertAdjacentHTML("afterbegin", markup);
-});
-// };
-// const displayMusic = function () {
-musicvideoMovies.forEach(function (item) {
-  const markup = `
-    <img
-    class="movie" id=${item}
-    
-    src="https://i3.ytimg.com/vi/${item}/hqdefault.jpg"
-    alt="video mini"
-  />
-  `;
-
-  document
-    .querySelector(".movies--musicvideo")
-    .insertAdjacentHTML("afterbegin", markup);
-
-  document.getElementById(item).addEventListener("click", function () {
-    const modalHtml = `
-    <div class="modal">
-    <button class="close--modal">&times;</button>
-    <div class="iframe">
-      <iframe
-        class="iframe__video"
-        src="https://www.youtube.com/embed/${item}"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>`;
-
-    modalContainer.insertAdjacentHTML("beforeend", modalHtml);
-  });
-});
-
-// };
-
-// displayFiction();
-// displayDocumentary();
-// displayCommercial();
-// displayPersonal();
-// displayMusic();
