@@ -19,8 +19,9 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 
 const moviesObj = {
-  fictionMovies: ["dMdJUfna1SI", "QiqH5ym7ZuM", "h_Z0z5aBh7g", "spN17NY6VlU"],
+  fictionMovies: ["spN17NY6VlU", "QiqH5ym7ZuM", "h_Z0z5aBh7g", "dMdJUfna1SI"],
   documentaryMovies: ["cJSCh2U_uNY", "Tsm_PdFATfE"],
+  musicvideoMovies: ["zgw84vYqDx4", "7BKIfWBqjrs"],
   commercialMovies: ["4e7cQ281NQw", "_HvKe_e1JOQ", "ZKfb3-NFAdk"],
   personalMovies: [
     "V1_7aIxYXJ8",
@@ -31,7 +32,6 @@ const moviesObj = {
     "WLDDAHMTIUg",
     "MgU4UrTDkRc",
   ],
-  musicvideoMovies: ["zgw84vYqDx4", "7BKIfWBqjrs"],
 
   renderMovies(arr, container) {
     arr.forEach((movieID) => {
@@ -71,9 +71,9 @@ const moviesObj = {
 
 moviesObj.renderMovies(moviesObj.fictionMovies, fictionContainer);
 moviesObj.renderMovies(moviesObj.documentaryMovies, documentaryContainer);
+moviesObj.renderMovies(moviesObj.musicvideoMovies, musicvideoContainer);
 moviesObj.renderMovies(moviesObj.commercialMovies, commercialContainer);
 moviesObj.renderMovies(moviesObj.personalMovies, personalContainer);
-moviesObj.renderMovies(moviesObj.musicvideoMovies, musicvideoContainer);
 
 document.addEventListener("click", function (e) {
   if (e.target && e.target.classList == "close--modal") {
