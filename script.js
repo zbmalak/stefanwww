@@ -57,7 +57,8 @@ const moviesObj = {
             allowfullscreen
           ></iframe>
         </div>
-      </div>`;
+      </div>
+      <div class="overlay"></div>`;
 
       document
         .getElementById(`${movieID}`)
