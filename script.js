@@ -1,7 +1,5 @@
 "use strict";
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close--modal");
+
 const modalContainer = document.querySelector(".modal--container");
 
 const fictionContainer = document.querySelector(".movies--fiction");
@@ -18,33 +16,33 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
   }
 });
 
-const moviesObj = {
-  fictionMovies: ["spN17NY6VlU", "QiqH5ym7ZuM", "h_Z0z5aBh7g", "dMdJUfna1SI"],
+const movies = {
+  fictionMovies: ["spN17NY6VlU", "h_Z0z5aBh7g", "dMdJUfna1SI", "QiqH5ym7ZuM"],
   documentaryMovies: ["cJSCh2U_uNY", "Tsm_PdFATfE"],
   musicvideoMovies: ["zgw84vYqDx4", "7BKIfWBqjrs"],
-  commercialMovies: ["4e7cQ281NQw", "_HvKe_e1JOQ", "ZKfb3-NFAdk"],
+  commercialMovies: ["ZKfb3-NFAdk", "_HvKe_e1JOQ", "4e7cQ281NQw"],
   personalMovies: [
-    "V1_7aIxYXJ8",
-    "6UAi8fgAZtY",
+    "MgU4UrTDkRc",
     "rvBULEFohNs",
     "aM7SxNE13TI",
     "Dkjq4QsJuAg",
     "WLDDAHMTIUg",
-    "MgU4UrTDkRc",
+    "V1_7aIxYXJ8",
+    "6UAi8fgAZtY",
   ],
+};
 
-  renderMovies(arr, container) {
-    arr.forEach((movieID) => {
-      const markup = `
+const renderMovies = function (arr, container) {
+  arr.forEach((movieID) => {
+    const markup = `
         <img
         class="movie ${movieID}"  id=${movieID}
         src="https://i3.ytimg.com/vi/${movieID}/hqdefault.jpg"
-      
       />
      `;
-      container.insertAdjacentHTML("afterbegin", markup);
+    container.insertAdjacentHTML("afterbegin", markup);
 
-      const modalHtml = `
+    const modalHtml = `
       <div class="modal">
         <button class="close--modal">&times;</button>
         <div class="iframe">
@@ -60,20 +58,19 @@ const moviesObj = {
       </div>
       <div class="overlay"></div>`;
 
-      document
-        .getElementById(`${movieID}`)
-        .addEventListener("click", function () {
-          modalContainer.insertAdjacentHTML("afterbegin", modalHtml);
-        });
-    });
-  },
+    document
+      .getElementById(`${movieID}`)
+      .addEventListener("click", function () {
+        modalContainer.insertAdjacentHTML("afterbegin", modalHtml);
+      });
+  });
 };
 
-moviesObj.renderMovies(moviesObj.fictionMovies, fictionContainer);
-moviesObj.renderMovies(moviesObj.documentaryMovies, documentaryContainer);
-moviesObj.renderMovies(moviesObj.musicvideoMovies, musicvideoContainer);
-moviesObj.renderMovies(moviesObj.commercialMovies, commercialContainer);
-moviesObj.renderMovies(moviesObj.personalMovies, personalContainer);
+renderMovies(movies.fictionMovies, fictionContainer);
+renderMovies(movies.documentaryMovies, documentaryContainer);
+renderMovies(movies.musicvideoMovies, musicvideoContainer);
+renderMovies(movies.commercialMovies, commercialContainer);
+renderMovies(movies.personalMovies, personalContainer);
 
 document.addEventListener("click", function (e) {
   if (e.target && e.target.classList == "close--modal") {
