@@ -33,7 +33,7 @@ header h2 {
   letter-spacing: 5px;
 }
 
-header p {
+/* header p {
   position: absolute;
 }
 
@@ -43,7 +43,7 @@ header p.mail {
 
 header p.phone {
   display: none;
-}
+} */
 
 nav ul {
   display: flex;
@@ -62,7 +62,6 @@ nav ul li a {
   display: block;
   text-decoration: none;
   color: #262626;
-  /* padding: 1px; */
 }
 
 section {
@@ -73,7 +72,7 @@ p.section__title {
   font-family: "Chivo", sans-serif;
   font-size: 24px;
   margin-top: 10px;
-  padding: 10px 0 0 20px;
+  margin-bottom: 10px;
 }
 
 div.movies {
@@ -85,8 +84,8 @@ div.movies {
 img.movie {
   width: 100%;
   object-fit: cover;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .modal {
@@ -137,7 +136,6 @@ img.movie {
 footer {
   width: 100%;
   font-size: 16px;
-  height: 5vh;
   margin-top: 10px;
   text-align: center;
   line-height: 5vh;
@@ -157,6 +155,13 @@ footer {
   }
 }
 
+@media (min-width: 410px) {
+  .iframe iframe {
+    width: 360px;
+    height: 300px;
+  }
+}
+
 @media (min-width: 640px) {
   div.movies {
     align-content: space-between;
@@ -164,7 +169,7 @@ footer {
   }
 
   p.section__title {
-    padding: 20px 0 20px 60px;
+    padding: 10px 0 10px 50px;
   }
 
   img.movie {
@@ -175,6 +180,12 @@ footer {
   .iframe iframe {
     width: 500px;
     height: 200px;
+  }
+}
+@media (min-width: 800px) {
+  .iframe iframe {
+    width: 700px;
+    height: 350px;
   }
 }
 
@@ -197,7 +208,7 @@ footer {
     letter-spacing: 5px;
   }
 
-  ul.head__links {
+  /* ul.head__links {
     position: absolute;
     display: flex;
     top: 150px;
@@ -212,10 +223,18 @@ footer {
   a.head__link {
     text-decoration: none;
     color: #262626;
-  }
+  } */
 
   nav ul {
     width: 40%;
+  }
+
+  nav ul li a {
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #949494;
   }
 
   img.movie {
@@ -234,6 +253,6 @@ footer {
 
   .iframe iframe {
     width: 1000px;
-    height: 450px;
+    height: 400px;
   }
 }

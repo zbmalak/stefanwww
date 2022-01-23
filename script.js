@@ -19,7 +19,7 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 const movies = {
   fictionMovies: ["spN17NY6VlU", "h_Z0z5aBh7g", "dMdJUfna1SI", "QiqH5ym7ZuM"],
   documentaryMovies: ["cJSCh2U_uNY", "Tsm_PdFATfE"],
-  musicvideoMovies: ["7BKIfWBqjrs", "suvfh2D_y_4"],
+  musicvideoMovies: ["7BKIfWBqjrs", "suvfh2D_y_4", "FlHacOV0tg4"],
   commercialMovies: ["ZKfb3-NFAdk", "_HvKe_e1JOQ", "4e7cQ281NQw"],
   personalMovies: [
     "MgU4UrTDkRc",
